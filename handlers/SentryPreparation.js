@@ -15,7 +15,7 @@ module.exports = (error, req, res, next) => {
 
       if(error instanceof CustomError) {
 
-        error._sentry.message = "[PROVISIONING ERROR] " + error.message + " - " + error.description;
+        error._sentry.message = "[" + error.name + "] " + error.code + " - " + error.message;
 
         if(error.hasOwnProperty("sentry") && error.sentry !== null) {
           if(error.sentry.hasOwnProperty("send") && (error.sentry.send === true || error.sentry.send === false)) { error._sentry.send = error.sentry.send; }
