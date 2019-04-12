@@ -14,7 +14,7 @@ npm install --save simple-custom-errors
 
 Setup and usage of the custom errors package follows the same principle.
 ```javascript
-const CustomErrors = require("custom-errors");
+const CustomErrors = require("simple-custom-errors");
 
 CustomErrors.createError("FooError", [
   {
@@ -43,7 +43,7 @@ Creating an error can be done by using the ```createError(name, errorList = [])`
 
 **Example**
 ```javascript
-const CustomError = require("custom-errors");
+const CustomError = require("simple-custom-errors");
 
 CustomError.createError("ErrorName", [
   {
@@ -66,11 +66,11 @@ When an error is created, it's time to use such an error. This can be done in tw
 **Example**
 ```javascript
 // Use the CustomError variable
-const CustomError = require("custom-errors");
+const CustomError = require("simple-custom-errors");
 throw new CustomError.Errors.ErrorName("ErrorCode", { variable: "foo" });
 
 // Use the Errors directly
-const Errors = require("custom-errors").Errors;
+const Errors = require("simple-custom-errors").Errors;
 throw new Errors.ErrorName("ErrorCode", { variable: "foo" });
 ```
 
@@ -86,7 +86,7 @@ The different handlers all have their own special talent. Some make the errors b
 This handler is used to prettify errors for the ExpressJS response.
 ```javascript
 const express = require("express");
-const CustomError = require("custom-errors");
+const CustomError = require("simple-custom-errors");
 
 CustomError.createError("ErrorName", [
   {
@@ -128,7 +128,7 @@ Prepare errors for Sentry (works best with the PrettifyErrors handler). You have
 ```javascript
 const express = require("express");
 const Sentry = require("@node/sentry");
-const CustomError = require("custom-errors");
+const CustomError = require("simple-custom-errors");
 
 Sentry.init({
   dns: "___DSN___",
@@ -181,7 +181,7 @@ Send the API response automatically with the API Response handler. This can't be
 
 ```javascript
 const express = require("express");
-const CustomError = require("custom-errors");
+const CustomError = require("simple-custom-errors");
 
 CustomError.createError("ErrorName", [
   {
