@@ -5,8 +5,8 @@ module.exports = (error, req, res, next) => {
     res.status(error.statusCode || 500);
 
     let response = {
-      error: error.message,
-      description: error.description
+      error: error.code,
+      description: error.message
     }
 
     if(error.hasOwnProperty("details") && Object.keys(error.details).length > 0) {
