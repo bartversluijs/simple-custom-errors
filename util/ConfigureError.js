@@ -1,7 +1,7 @@
 const placeholderRegex = new RegExp(/{{(.*?)}}/g);
 
 module.exports = (error, errorObject) => {
-  let findError = errorObject.find(e => e.code === error._code);
+  let findError = errorObject.find(e => e.code === error.code);
   if(typeof findError !== typeof undefined && findError !== null) {
 
     if(findError.hasOwnProperty("sentry")) { error.sentry = findError.sentry; }
