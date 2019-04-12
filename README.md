@@ -3,7 +3,7 @@
 Description
 -------------
 This simple Node.js package is used for creating custom errors for better error handling in Node.js. It supports custom error codes, descriptions, variables and it offers Sentry support!
-It also contains some handlers for [ExpressJS](https://expressjs.com) and [Sentry)(https://sentry.io).
+It also contains some handlers for [ExpressJS](https://expressjs.com) and [Sentry](https://sentry.io).
 
 Installation and Usage
 -------------
