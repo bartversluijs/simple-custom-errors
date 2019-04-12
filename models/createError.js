@@ -3,8 +3,8 @@ const ConfigureError = require("../util/ConfigureError");
 const _customError = require("../errors/_custom");
 
 module.exports = (name, list = []) => {
-  let existingErrors = require("../errors/_module").Errors;
-  if(!existingErrors.hasOwnProperty(name)) {
+  let existingErrors = require("../errors/_module");
+  if(!existingErrors.Errors.hasOwnProperty(name)) {
 
     existingErrors._errors[name] = list;
     existingErrors.Errors[name] = class extends _customError {
