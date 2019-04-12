@@ -8,9 +8,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/bart_vedicium/custom-errors.git"
+    "url": "git+ssh://git@bitbucket.org/bart_versluijs/simple-custom-errors.git"
   },
   "author": "Bart Versluijs",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/bart_vedicium/custom-errors#readme"
+  "homepage": "https://bitbucket.org/bart_versluijs/simple-custom-errors#readme"
 }
