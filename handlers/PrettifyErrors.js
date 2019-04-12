@@ -1,5 +1,5 @@
 // Use this handler to prettify errors from multiple modules
-const ErrorModule = require("../errors/_module");
+const CustomError = require("../errors/_custom");
 
 let installedModules = require("../util/InstalledModules");
 
@@ -8,7 +8,7 @@ module.exports = (error, req, res, next) => {
 
     if(typeof error !== typeof undefined && typeof error.constructor !== typeof undefined) {
 
-      if(error instanceof ErrorModule.GeneralError || error instanceof ErrorModule.ProvisioningError) {
+      if(error instanceof CustomError) {
 
         if(error.hasOwnProperty("details") && error.details.hasOwnProperty("additional")) {
 

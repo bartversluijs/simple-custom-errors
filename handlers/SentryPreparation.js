@@ -1,5 +1,5 @@
 // Use this handler when using Sentry, to get prettified errors in Sentry
-const ErrorModule = require("../errors/_module");
+const CustomError = require("../errors/_custom");
 
 let installedModules = require("../util/InstalledModules");
 
@@ -13,7 +13,7 @@ module.exports = (error, req, res, next) => {
 
     if(typeof error !== typeof undefined && typeof error.constructor !== typeof undefined) {
 
-      if(error instanceof ErrorModule.GeneralError || error instanceof ErrorModule.ProvisioningError) {
+      if(error instanceof CustomError) {
 
         error._sentry.message = "[PROVISIONING ERROR] " + error.message + " - " + error.description;
 
