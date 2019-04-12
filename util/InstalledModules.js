@@ -17,7 +17,7 @@ if(fs.existsSync(packagePath)) {
         modules = JSON.parse(file);
         modules = modules.dependencies;
       } catch(e) {
-        console.error(e);
+        console.warn("CustomErrors WARNING: Unable to parse package.json file to JSON");
       }
 
       if(modules !== null) {
