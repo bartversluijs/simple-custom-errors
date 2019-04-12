@@ -7,7 +7,9 @@ let installedModules = [];
 if(fs.existsSync(packagePath)) {
   fs.readFile(packagePath, "utf8", (err, file) => {
     if(err) {
-      console.error(err);
+      console.warn("CustomErrors WARNING: Unable to read package.json file");
+
+      if(process.env.NODE_ENV !== "production") { console.error(err); }
     } else {
 
       let modules = null;
