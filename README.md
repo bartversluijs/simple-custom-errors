@@ -1,4 +1,4 @@
-# Custom Errors for NodeJS
+# Simple Custom Errors for NodeJS
 
 Description
 -------------
@@ -9,8 +9,7 @@ Installation and Usage
 -------------
 To install the custom errors package, simply install via npm or yarn
 ```
-npm install --save custom-errors
-yarn add custom-errors
+npm install --save simple-custom-errors
 ```
 
 Setup and usage of the custom errors package follows the same principle.
