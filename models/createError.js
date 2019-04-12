@@ -9,9 +9,9 @@ module.exports = (name, list = []) => {
     existingErrors._errors[name] = list;
     existingErrors.Errors[name] = class extends _customError {
       constructor(code, details = {}) {
-        super(code);
+        super();
 
-        this._code = code;
+        this.code = code;
         this.message = code;
 
         this._details = details;
