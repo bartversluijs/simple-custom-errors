@@ -4,7 +4,7 @@ module.exports = (event, hint) => {
   try {
     Sentry = require("@sentry/node");
   } catch(e) {
-    console.error("Sentry Node.JS SDK is not installed, please install this SDK first before using the SentrySendEvent handler");
+    console.warn("CustomErrors WARNING: Sentry Node.JS SDK is not installed, please install this SDK first before using the SentrySendEvent handler");
   }
 
   if(Sentry !== null) {
