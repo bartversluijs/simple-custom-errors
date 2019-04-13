@@ -26,13 +26,11 @@ module.exports = (error, req, res, next) => {
         }
 
       } else if(installedModules.indexOf("request-promise") !== -1 && error instanceof require("request-promise/errors").RequestError) {
-        error.description = error.message;
-        error.message = error.name;
+        error.code = error.name;
       } else if(error instanceof Error) {
         if(error.hasOwnProperty("sql") || error.hasOwnProperty("sqlState") || error.hasOwnProperty("sqlMessage")) {
           // MySQL Error
-          error.message = error.code;
-          error.description = error.sqlMessage;
+          error.message = error.sqlMessage;
           error.details = {
             errno: error.errno
           }
