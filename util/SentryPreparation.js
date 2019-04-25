@@ -17,6 +17,10 @@ module.exports = (error) => {
 
         error._sentry.message = "[" + error.name + "] " + error.code + " - " + error.message;
 
+        error._sentry.tags = {
+          sort: error.name
+        }
+
         if(error.hasOwnProperty("sentry") && error.sentry !== null) {
           if(error.sentry.hasOwnProperty("send") && (error.sentry.send === true || error.sentry.send === false)) { error._sentry.send = error.sentry.send; }
           if(error.sentry.hasOwnProperty("level")) { error._sentry.level = error.sentry.level; }
@@ -28,11 +32,18 @@ module.exports = (error) => {
 
       } else if(installedModules.indexOf("request-promise") !== -1 && error instanceof require('request-promise/errors').RequestError) {
         error._sentry.message = "[REQUEST ERROR] " + error.message;
+        error._sentry.tags = {
+          sort: "REQUEST"
+        }
       } else if(error instanceof Error) {
 
         if(error.hasOwnProperty("sql") || error.hasOwnProperty("sqlState") || error.hasOwnProperty("sqlMessage")) {
           // MySQL Error
           error._sentry.message = "[MYSQL ERROR] " + error.code + " (#" + error.errno + ") - " + error.sqlMessage;
+
+          error._sentry.tags = {
+            sort: "MYSQL"
+          }
 
           error._sentry.extra.mysqlError = {
             number: error.errno,
