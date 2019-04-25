@@ -23,5 +23,10 @@ module.exports = {
     APIResponse,
 
     SentrySendEvent
+  },
+  Util: {
+    PrettifyErrors: require("./util/PrettifyErrors"),
+    SentryPreparation: require("./util/SentryPreparation"),
+    APIResponse: require("./util/APIResponse")
   }
 };
