@@ -35,9 +35,9 @@ module.exports = (event, hint) => {
             if(error._sentry.hasOwnProperty("tags")) {
               if(!event.hasOwnProperty("tags")) { event.tags = {}; }
 
-              Object.keys(errors._sentry.tags).forEach(tag => {
+              Object.keys(error._sentry.tags).forEach(tag => {
                 if(!event.tags.hasOwnProperty(tag)) {
-                  event.tags[tag] = errors._sentry.tags[tag];
+                  event.tags[tag] = error._sentry.tags[tag];
                 }
               })
             }
