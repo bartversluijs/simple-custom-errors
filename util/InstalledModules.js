@@ -20,7 +20,7 @@ if(fs.existsSync(packagePath)) {
         console.warn("CustomErrors WARNING: Unable to parse package.json file to JSON");
       }
 
-      if(modules !== null) {
+      if(modules !== null && typeof modules !== typeof undefined) {
         Object.keys(modules).forEach(key => {
           installedModules.push(key);
         })
