@@ -2,7 +2,9 @@ const ConfigureError = require("../util/ConfigureError");
 
 const _customError = require("../errors/_custom");
 
-module.exports = (name, list = []) => {
+module.exports = (name, list) => {
+  if(typeof list === typeof undefined) list = [];
+  
   let existingErrors = require("../errors/_module");
   if(!existingErrors.Errors.hasOwnProperty(name)) {
 
