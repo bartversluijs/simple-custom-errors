@@ -1,3 +1,5 @@
+"use strict"
+
 // Use this as last error handler when using API requests
 const APIResponse = require("../util/APIResponse");
 

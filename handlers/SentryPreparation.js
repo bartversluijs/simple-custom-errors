@@ -1,3 +1,5 @@
+"use strict"
+
 // Use this handler when using Sentry, to get prettified errors in Sentry
 const SentryPreparation = require("../util/SentryPreparation");
 

@@ -1,3 +1,5 @@
+"use strict"
+
 module.exports = (event, hint) => {
 
   let Sentry = null;

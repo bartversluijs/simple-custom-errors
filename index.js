@@ -1,3 +1,5 @@
+"use strict"
+
 const createError = require("./models/createError");
 
 const CustomError = require("./errors/_custom");

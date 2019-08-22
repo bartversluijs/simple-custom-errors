@@ -1,3 +1,5 @@
+"use strict"
+
 const placeholderRegex = new RegExp(/{{(.*?)}}/g);
 
 module.exports = (error, errorObject) => {

@@ -1,3 +1,5 @@
+"use strict"
+
 // Use this handler to prettify errors from multiple modules
 const PrettifyErrors = require("../util/PrettifyErrors");
 

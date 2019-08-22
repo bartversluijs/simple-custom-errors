@@ -1,10 +1,12 @@
+"use strict"
+
 const CustomError = require("../errors/_custom");
 
 let installedModules = require("../util/InstalledModules");
 
 module.exports = (error) => {
   if(error) {
-    
+
     if(typeof error !== typeof undefined && typeof error.constructor !== typeof undefined) {
 
       if(error instanceof CustomError) {
