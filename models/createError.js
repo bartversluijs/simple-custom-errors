@@ -13,7 +13,9 @@ module.exports = (name, list) => {
 
     existingErrors._errors[name] = list;
     existingErrors.Errors[name] = class extends _customError {
-      constructor(code, details = {}) {
+      constructor(code, details) {
+        if(typeof details === typeof undefined) details = {};
+
         super();
 
         this.code = code;
