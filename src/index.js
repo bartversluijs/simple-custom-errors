@@ -7,25 +7,28 @@ export default {
   Error: CustomError,
 
   Errors,
-  createError (name = null, subErrors = []) {
+  createError (type = null, subErrors = []) {
     // Check if name is given
-    if (!name) {
-      throw new CustomError('Error name undefined');
+    if (!type) {
+      throw new CustomError('Error type undefined');
     }
 
     // Check if name already exists
-    if (typeof Errors[name] !== typeof undefined) {
-      throw new CustomError(`Error '${name}' already exists`);
+    if (typeof Errors[type] !== typeof undefined) {
+      throw new CustomError(`Error '${type}' already exists`);
     }
 
     // Add error to Errors object
-    Errors[name] = class extends CustomError {
+    Errors[type] = class extends CustomError {
       constructor (code, params = {}) {
         super(code, params);
+
+        // Set type
+        this.type = type;
       }
 
       configureError (params = {}) {
-        const subError = Errors[name].subErrors.find((error) => error.code === this.code);
+        const subError = Errors[type].subErrors.find((error) => error.code === this.code);
         if (!subError) {
           return this;
         }
@@ -68,12 +71,12 @@ export default {
     };
 
     // Add sub-errors
-    Errors[name].subErrors = subErrors;
+    Errors[type].subErrors = subErrors;
 
     // Give the error the right name
-    Object.defineProperty(Errors[name], 'name', { value: name });
-    Errors[name].prototype.name = name;
+    Object.defineProperty(Errors[type], 'name', { value: type });
+    Errors[type].prototype.name = type;
 
-    return Errors[name];
+    return Errors[type];
   },
 };
