@@ -1,11 +1,11 @@
 // Classes
 import CustomError from './error';
 
-// Variables
-const Errors = {};
+export const Errors = {};
 
 export default {
-  CustomError,
+  Error: CustomError,
+
   Errors,
   createError (name = null, subErrors = []) {
     // Check if name is given
@@ -19,18 +19,9 @@ export default {
     }
 
     // Add error to Errors object
-    Errors[name] = class NewError extends CustomError {
+    Errors[name] = class extends CustomError {
       constructor (code, params = {}) {
-        super();
-
-        this.code = code;
-        this.message = code;
-
-        this.params = null;
-        this.sentry = null;
-
-        // Configure error
-        this.configureError(params);
+        super(code, params);
       }
 
       configureError (params = {}) {
