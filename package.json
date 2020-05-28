@@ -1,16 +1,16 @@
 {
   "name": "simple-custom-errors",
-  "version": "0.2.6",
-  "description": "Simple Custom Errors creating via JavaScript for better error handling",
+  "version": "0.2.7",
+  "description": "Simple Custom Error creating via JavaScript for better error handling",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/bart_versluijs/simple-custom-errors.git"
+    "url": "git+ssh://git@github.com:bartversluijs/simple-custom-errors.git"
   },
   "author": "Bart Versluijs",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/bart_versluijs/simple-custom-errors#readme"
+  "homepage": "https://github.com/bartversluijs/simple-custom-errors#readme"
 }
