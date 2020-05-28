@@ -1,12 +1,19 @@
 // Classes
 import CustomError from './error';
 
+// Middleware
+import APIError from './middleware/APIError';
+
+// Variables
 export const Errors = {};
 
 export default {
   Error: CustomError,
 
   Errors,
+  Middleware: {
+    APIError,
+  },
   createError (type = null, subErrors = []) {
     // Check if name is given
     if (!type) {
