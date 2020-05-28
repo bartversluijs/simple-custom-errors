@@ -44,6 +44,9 @@ export default {
         // Set description
         this.message = (subError.description || this.message);
 
+        // Set HTTP code
+        this.http = (subError.http || this.http);
+
         // Convert variables in message to keys
         let regexMatch;
         do {
