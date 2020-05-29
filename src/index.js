@@ -40,9 +40,6 @@ export default {
           return this;
         }
 
-        // Set sentry
-        this.sentry = (subError.sentry || null);
-
         // Set params
         if (subError.params && Array.isArray(subError.params)) {
           this.params = {};

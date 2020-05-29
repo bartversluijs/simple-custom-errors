@@ -6,7 +6,6 @@ export default class CustomError extends Error {
     this.message = code;
 
     this.params = null;
-    this.sentry = true;
 
     // HTTP options
     this.http = {
