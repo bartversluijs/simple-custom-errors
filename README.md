@@ -38,7 +38,7 @@ Documentation
 -------------
 
 #### Creating an error
-Creating an error can be done by using the ```createError(name, errorList = [])``` function.
+Creating an error can be done by using the ```createError(type, errorList = [])``` function.
 
 **Example**
 ```javascript
