@@ -1,12 +1,13 @@
 {
   "name": "simple-custom-errors",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Simple Custom Error creating via JavaScript for better error handling",
   "main": "./lib/index.js",
   "scripts": {
     "lint": "eslint src",
     "build": "cross-env BABEL_ENV=production babel src --out-dir lib",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish": "npm run build && npm publish"
   },
   "files": [
     "lib"
