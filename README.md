@@ -8,7 +8,7 @@
 Description
 -------------
 This simple Node.js package is used for creating custom errors for better error handling in Node.js. It supports custom error codes, descriptions and variables. This along with some useful API formatters.
-It's perfect for [error handling](https://www.github.com/bartversluijs/simple-custom-errors/examples/handling.js) and also has some easy to use middleware.
+It's perfect for [error handling](./examples/handling.js) and also has some easy to use middleware.
 
 Installation and Usage
 -------------
