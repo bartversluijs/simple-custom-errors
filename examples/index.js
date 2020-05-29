@@ -4,13 +4,14 @@ import SimpleCustomErrors from '../lib/index';
 SimpleCustomErrors.createError('FooError', [
   {
     code: 'Bar',
-    description: 'Bar Error',
+    description: 'Bar {{foo}}',
     params: [
       'foo',
     ],
   },
 ]);
 
+// Throw error
 throw new SimpleCustomErrors.Errors.FooError('Bar', {
   foo: ['Test'],
 });
