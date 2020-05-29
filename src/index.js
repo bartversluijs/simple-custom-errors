@@ -2,7 +2,7 @@
 import CustomError from './error';
 
 // Middleware
-import APIError from './middleware/APIError';
+import apiError from './middleware/APIError';
 
 // Variables
 export const Errors = {};
@@ -12,7 +12,7 @@ export default {
 
   Errors,
   Middleware: {
-    APIError,
+    apiError,
   },
   createError (type = null, subErrors = []) {
     // Check if name is given

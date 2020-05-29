@@ -8,8 +8,9 @@ export default (error, _req, res, next) => {
   }
 
   // If it is a CustomError, handle the error
-  // Set HTTP Status code
+  // Set HTTP(s) Status code
   res.status(error.httpStatusCode);
 
+  // Return formatted apiError
   return res.json(error.apiError);
 };
