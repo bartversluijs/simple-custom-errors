@@ -54,6 +54,9 @@ export default {
         // Set HTTP code
         this.http = (subError.http || this.http);
 
+        // Set sentry
+        this.sentry = (typeof subError.sentry !== typeof undefined ? subError.sentry : this.sentry);
+
         // Convert variables in message to keys
         let regexMatch;
         do {
