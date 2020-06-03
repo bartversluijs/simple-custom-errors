@@ -11,6 +11,14 @@ export default (error, _req, res, next) => {
   // Set HTTP(s) Status code
   res.status(error.httpStatusCode);
 
-  // Return formatted apiError
-  return res.json(error.apiError);
+  // Set jsonError
+  const jsonError = error.apiError;
+
+  // Add Sentry error_tracking
+  if (res.sentry) {
+    jsonError.error_tracking = res.sentry;
+  }
+
+  // Return formatted jsonError
+  return res.json(jsonError);
 };
