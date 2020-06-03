@@ -12,6 +12,12 @@ export default class CustomError extends Error {
       statusCode: 500,
     };
 
+    // Sentry options
+    this.sentry = {
+      send: true,
+      level: 'error',
+    };
+
     // Configure error
     this.configureError(params);
   }
@@ -36,6 +42,21 @@ export default class CustomError extends Error {
     }
 
     return apiError;
+  }
+
+  get sendToSentry () {
+    // Check if sentry itself is a boolean
+    if (typeof this.sentry === 'boolean') {
+      return this.sentry;
+    }
+
+    // Check if send is a boolean
+    if (this.sentry && typeof this.sentry.send === 'boolean') {
+      return this.sentry.send;
+    }
+
+    // Always send to sentry by default
+    return true;
   }
 
   // Methods
