@@ -23,7 +23,7 @@ export default class SimpleCustomErrors {
     apiError
   };
 
-  static createError (type: string, subErrors?: SubError[]): CustomError {
+  static createError (type: string, subErrors?: SubError[]) {
     // Check if name is given
     if (!type) {
       throw new CustomError('Error type undefined');
@@ -72,24 +72,9 @@ export default class SimpleCustomErrors {
         this.sentry = (typeof subError.sentry !== typeof undefined ? subError.sentry : this.sentry);
 
         // Convert variables in message to keys
-        let regexMatch;
-        do {
-          regexMatch = new RegExp(/{{(.*?)}}/g).exec(this.message);
-          if (regexMatch && this.params && this.params[regexMatch[1]]) {
-            let replaceValue = this.params[regexMatch[1]];
-
-            // Check if Array or Object, so we can stringify the value
-            if (typeof replaceValue === 'object' || Array.isArray(replaceValue)) {
-              replaceValue = JSON.stringify(replaceValue);
-            }
-
-            // Replace message variable with replaceValue
-            this.message = this.message.replace(new RegExp(regexMatch[0], 'g'), replaceValue);
-          } else {
-            // Stop while
-            regexMatch = null;
-          }
-        } while (regexMatch);
+        Object.keys(this.params || []).forEach((key: string) => {
+          this.message = this.message.replace(new RegExp(`{{${key}}}`, 'g'), (this.params && this.params[key] ? this.params[key] : undefined));
+        });
 
         return this;
       }
