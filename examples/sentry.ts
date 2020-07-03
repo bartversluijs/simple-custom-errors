@@ -1,6 +1,6 @@
 import Sentry from '@sentry/node';
 
-import SimpleCustomErrors from '../src/index';
+import SimpleCustomErrors from '../build/index';
 
 // Create FooError
 SimpleCustomErrors.createError('FooError', [

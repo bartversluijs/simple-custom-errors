@@ -6,5 +6,5 @@ package-lock.json
 */**/.DS_Store
 .DS_Store
 
-# Lib
-lib
+# build
+build

@@ -1,4 +1,4 @@
-import SimpleCustomErrors from '../lib/index';
+import SimpleCustomErrors from '../build/index';
 
 // Create FooError
 const FooError = SimpleCustomErrors.createError('FooError', [
