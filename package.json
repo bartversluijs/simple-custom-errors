@@ -2,13 +2,13 @@
   "name": "simple-custom-errors",
   "version": "0.6.1",
   "description": "Simple Custom Error creating via JavaScript for better error handling",
-  "main": "./lib/index.js",
+  "main": "./build/index.js",
   "scripts": {
     "dev": "ts-node --log-error ./examples/api.ts",
     "lint": "eslint . --ext .ts",
     "build": "npm run lint && rimraf ./build && tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "publish": "npm run build && npm publish"
+    "publish": "npm run build"
   },
   "files": [
     "build"
