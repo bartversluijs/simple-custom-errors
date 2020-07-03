@@ -85,8 +85,12 @@ export default class SimpleCustomErrors {
 
             // Replace message variable with replaceValue
             this.message = this.message.replace(new RegExp(regexMatch[0], 'g'), replaceValue);
+          } else {
+            // Stop while
+            regexMatch = null;
           }
         } while (regexMatch);
+
         return this;
       }
     }
