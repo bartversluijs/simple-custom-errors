@@ -14,6 +14,12 @@ export interface SubError {
   sentry?: SentryConfig;
 }
 
+new Error().stack
+
+export interface ErrorOptions {
+  stack?: string | undefined;
+}
+
 export default class SimpleCustomErrors {
   static Error = CustomError;
 
@@ -36,11 +42,16 @@ export default class SimpleCustomErrors {
 
     // Add error to Errors object
     class UndefinedError extends CustomError {
-      constructor (code: Code, params?: Record<string, any>) {
+      constructor (code: Code, params?: Record<string, any>, options?: ErrorOptions) {
         super(code, params);
 
         // Set type
         this.type = type;
+
+        // Set stack, if given
+        if (options?.stack) {
+          this.stack = options.stack;
+        }
       }
 
       configureError (params?: Record<string, any>): this {
