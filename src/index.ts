@@ -16,8 +16,6 @@ export interface SubError {
   sentry?: SentryConfig;
 }
 
-new Error().stack
-
 export interface ErrorOptions {
   stack?: string | undefined;
 }
