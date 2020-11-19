@@ -1,6 +1,6 @@
 {
   "name": "simple-custom-errors",
-  "version": "0.6.4",
+  "version": "0.6.5",
   "description": "Simple Custom Error creating via JavaScript for better error handling",
   "main": "./build/index.js",
   "scripts": {
