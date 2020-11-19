@@ -4,7 +4,9 @@ import CustomError, { Code, SentryConfig, HTTPConfig } from './error';
 // Middleware
 import apiError from './middleware/apiError';
 
-export type Error = CustomError;
+export {
+  CustomError as SimpleCustomError
+};
 
 export interface SubError {
   code: string;
